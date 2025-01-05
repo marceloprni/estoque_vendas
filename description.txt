@@ -1,0 +1,26 @@
+Modulos
+- A aplicação precisa de um modulo. E o starting point da aplicação
+- Modulo do nest é uma maneira de organizar os componentes, ele que tem a relação com o controller e o service
+ou com outros Modulos
+- Para definir o modulo é necessario que a classe tenha o @Module decorator, o decorator fornece metadados que o nest vai
+utilizar para orgnanização
+
+Salvar configurar automático eslint:
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",  // Para arquivos .jsx
+        "typescript",       // Para arquivos .ts
+        "typescriptreact"   // Para arquivos .tsx
+    ]
+}
+
+# Criar module
+nest g module user
+nest g controller user
+nest g service user
+
+npx typeorm migration:create ./src/migration/create_table_user

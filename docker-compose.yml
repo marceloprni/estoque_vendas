@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_container_vr3
+    environment:
+      POSTGRES_USER: dbNest       # Usuário padrão do PostgreSQL
+      POSTGRES_PASSWORD: mypassword # Senha do usuário
+      POSTGRES_DB: dataNest     # Nome do banco de dados inicial
+    ports:
+      - "5446:5432"                 # Porta do container exposta para a máquina host
+    volumes:
+      - pgdata:/var/lib/postgresql/data # Volume persistente para armazenamento de dados
+
+volumes:
+  pgdata:

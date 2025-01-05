@@ -1,0 +1,29 @@
+
+### VISUALIZAR TODOS OS USER
+GET http://localhost:3000/user
+content-type: application/json
+#Authorization: Bearer 
+
+
+### CREATE USER
+POST http://localhost:3000/user 
+content-type: application/json
+
+{
+    "name": "lari",
+    "phone": "11897813021",
+    "email": "lari@gmail.com.br",
+    "cpf" : "39518754546",
+    "password": "lari123"
+}
+
+### STATE
+
+GET http://localhost:3000/state
+content-type: application/json
+
+
+### CITY
+
+GET http://localhost:3000/city/2
+content-type: application/json
