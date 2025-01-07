@@ -1,0 +1,4 @@
+### STATE
+
+GET http://localhost:3000/state
+content-type: application/json

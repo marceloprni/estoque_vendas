@@ -1,0 +1,15 @@
+# ENVIAR DADOS DE ADDRESS
+POST http://localhost:3000/address/1
+content-type: application/json
+
+{
+    "complement": "complemento",
+    "number": 3213,
+    "cep": "09371654",
+    "cityId" : 3
+}
+
+# CHAMAR TODOS OS DADOS DE ENDEREÇO
+
+GET http://localhost:3000/address
+content-type: application/json
