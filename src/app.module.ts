@@ -7,6 +7,9 @@ import { AddressModule } from './address/address.module';
 import { CityModule } from './city/city.module';
 import { OrderModule } from './order/order.module';
 import { CacheModule } from './cache/cache.module';
+import { AuthService } from './auth/auth.service';
+import { AuthController } from './auth/auth.controller';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -31,8 +34,9 @@ import { CacheModule } from './cache/cache.module';
     CityModule,
     OrderModule,
     CacheModule,
+    AuthModule,
   ],
-  controllers: [],
-  providers: [],
+  controllers: [AuthController],
+  providers: [AuthService],
 })
 export class AppModule {}

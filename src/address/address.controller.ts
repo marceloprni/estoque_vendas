@@ -19,8 +19,7 @@ export class AddressController {
   async createAddress(
     @Body() createAddressDto: CreateAddressDto, // Corrigido aqui
     @Param('userId') userId: number,
-  ): Promise<AddressEntity> {
-    console.log('Received body:', createAddressDto);
+  ) {
     return this.addressService.createAddress(createAddressDto, userId);
   }
 }
