@@ -10,11 +10,11 @@ POST http://localhost:3000/user
 content-type: application/json
 
 {
-    "name": "lari",
-    "phone": "11897813021",
-    "email": "lari@gmail.com.br",
-    "cpf" : "39518754546",
-    "password": "lari123"
+    "name": "marcep",
+    "phone": "11993787458",
+    "email": "marcep@gmail.com.br",
+    "cpf" : "39518758794",
+    "password": "marcep123"
 }
 
 ### IDENTIFIY USER FOR ID
