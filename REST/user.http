@@ -19,7 +19,7 @@ content-type: application/json
 
 ### IDENTIFIY USER FOR ID
 
-GET http://localhost:3000/user/1
+GET http://localhost:3000/user/3
 content-type: application/json
 
 

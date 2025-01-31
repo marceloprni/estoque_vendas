@@ -24,6 +24,7 @@ export class AuthService {
       loginDto.password,
       user?.password || '',
     );
+
     console.log(`isMatch ${isMatch}`);
 
     if (!user || !isMatch) {
@@ -32,6 +33,7 @@ export class AuthService {
 
     const payload = new LoginPayload(user); // Certifique-se de que LoginPayload está correto
     console.log(payload);
+
     return {
       accessToken: this.jwtService.sign({ ...payload }),
       user: new ReturnUserDTO(user),
