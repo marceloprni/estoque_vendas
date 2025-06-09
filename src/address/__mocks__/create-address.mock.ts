@@ -1,5 +1,5 @@
 import { cityMock } from '../../city/__mocks__/city.mock';
-import { CreateAddressDto } from '../dtos/createAddress.dto';
+import { CreateAddressDto } from '../dto/createAddress.dto';
 import { addressMock } from './address.mock';
 
 export const createAddressMock: CreateAddressDto = {

@@ -24,7 +24,7 @@ export class AddressEntity {
   complement: string;
 
   @Column({ name: 'number', nullable: false })
-  number: number;
+  numberAddress: number;
 
   @Column({ name: 'cep', nullable: false })
   cep: string;

@@ -65,7 +65,7 @@ describe('User2Service', () => {
     expect(service.getUserById(userEntityMock.id)).rejects.toThrowError();
   });
 
-  it('should return error in getUserById', async () => {
+  it('should return error in findOne (error db)', async () => {
     jest.spyOn(userRepository, 'findOne').mockResolvedValueOnce(new Error());
 
     expect(service.getUserById(userEntityMock.id)).rejects.toThrowError();

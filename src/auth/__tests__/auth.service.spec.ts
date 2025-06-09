@@ -5,6 +5,7 @@ import { userEntityMock } from '../../user/__mocks__/user.mock';
 import { AuthService } from '../auth.service';
 import { jwtMock } from '../__mocks__/jwt.mock';
 import { loginUserMock } from '../__mocks__/login-user.mock';
+import { ReturnUserDTO } from '../../user/dto/returnUser.dto';
 
 describe('Auth2Service', () => {
   let service: AuthService;
@@ -17,7 +18,7 @@ describe('Auth2Service', () => {
         {
           provide: UserService,
           useValue: {
-            findUserByEmail: jest.fn().mockResolvedValue(userEntityMock),
+            getUserByEmail: jest.fn().mockResolvedValue(userEntityMock),
           },
         },
         {
@@ -43,7 +44,7 @@ describe('Auth2Service', () => {
 
     expect(user).toEqual({
       accessToken: jwtMock,
-      user: new ReturnUserDto(userEntityMock),
+      user: new ReturnUserDTO(userEntityMock),
     });
   });
 
@@ -54,13 +55,13 @@ describe('Auth2Service', () => {
   });
 
   it('should return user if email not exist', async () => {
-    jest.spyOn(userService, 'findUserByEmail').mockResolvedValue(undefined);
+    jest.spyOn(userService, 'getUserByEmail').mockResolvedValue(undefined);
 
     expect(service.login(loginUserMock)).rejects.toThrowError();
   });
 
   it('should return error in UserService', async () => {
-    jest.spyOn(userService, 'findUserByEmail').mockRejectedValue(new Error());
+    jest.spyOn(userService, 'getUserByEmail').mockRejectedValue(new Error());
 
     expect(service.login(loginUserMock)).rejects.toThrowError();
   });

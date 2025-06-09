@@ -16,7 +16,7 @@ describe('State2Service', () => {
         {
           provide: getRepositoryToken(StateEntity),
           useValue: {
-            find: jest.fn().mockResolvedValue({ stateMock }),
+            find: jest.fn().mockResolvedValue([stateMock]),
           },
         },
       ],
