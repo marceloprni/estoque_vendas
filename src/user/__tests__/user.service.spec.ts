@@ -35,10 +35,10 @@ describe('User2Service', () => {
     expect(userRepository).toBeDefined();
   });
 
-  it('should return user in findUserByEmail', async () => {
-    const user = service.getUserByEmail(userEntityMock.email);
+  it('should return user in getUserByEmail', async () => {
+    const user = await service.getUserByEmail(userEntityMock.email);
 
-    expect(userRepository).toEqual(user);
+    expect(user).toEqual(userEntityMock);
   });
 
   it('should return error in getUserByEmail', async () => {
@@ -48,15 +48,15 @@ describe('User2Service', () => {
   });
 
   it('should return error in getUserByEmail', async () => {
-    jest.spyOn(userRepository, 'findOne').mockResolvedValueOnce(new Error());
+    jest.spyOn(userRepository, 'findOne').mockRejectedValueOnce(new Error());
 
     expect(service.getUserByEmail(userEntityMock.email)).rejects.toThrowError();
   });
 
   it('should return user in getUserById', async () => {
-    const user = service.getUserById(userEntityMock.id);
+    const user = await service.getUserById(userEntityMock.id);
 
-    expect(userRepository).toEqual(user);
+    expect(user).toEqual(userEntityMock);
   });
 
   it('should return error in getUserById', async () => {
@@ -66,15 +66,15 @@ describe('User2Service', () => {
   });
 
   it('should return error in findOne (error db)', async () => {
-    jest.spyOn(userRepository, 'findOne').mockResolvedValueOnce(new Error());
+    jest.spyOn(userRepository, 'findOne').mockRejectedValueOnce(new Error());
 
     expect(service.getUserById(userEntityMock.id)).rejects.toThrowError();
   });
 
   it('should return user in getUserByIdUsingReferences', async () => {
-    const user = service.getUserByIdUsingReferences(userEntityMock.id);
+    const user = await service.getUserByIdUsingReferences(userEntityMock.id);
 
-    expect(userRepository).toEqual(user);
+    expect(user).toEqual(userEntityMock);
   });
 
   it('should return error if user exits', async () => {
