@@ -1,0 +1,12 @@
+### BUSCA CATEGORIA
+
+GET http://localhost:3000/category
+content-type: application/json
+
+### CRIAR CATEGORIA
+POST http://localhost:3000/category
+content-type: application/json
+
+{
+    "name": "nova categoria"
+}

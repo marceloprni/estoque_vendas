@@ -1,4 +1,3 @@
-### CITY
-
-GET http://localhost:3000/city/2
+### BUSCAR CATEGORIA
+GET http://localhost:3000/category
 content-type: application/json
