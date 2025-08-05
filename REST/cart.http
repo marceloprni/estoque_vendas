@@ -1,0 +1,9 @@
+#CREATE CART
+POST http://localhost:3000/cart 
+content-type: application/json
+Authorization: 
+
+{
+    "productId": 2,
+    "amount": 1
+}

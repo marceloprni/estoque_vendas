@@ -15,6 +15,7 @@ import { CategoryModule } from './category/category.module';
 import { ProductModule } from './product/product.module';
 import { CartModule } from './cart/cart.module';
 import { CartProductModule } from './cart-product/cart-product.module';
+import { CardProductService } from './card-product/card-product.service';
 
 @Module({
   imports: [
@@ -54,6 +55,7 @@ import { CartProductModule } from './cart-product/cart-product.module';
       provide: APP_GUARD,
       useClass: RolesGuard,
     },
+    CardProductService,
   ],
 })
 export class AppModule {}
