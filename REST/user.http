@@ -23,5 +23,12 @@ GET http://localhost:3000/user/2
 content-type: application/json
 
 
+### ATUALIZAR SENHA USER
+PATCH http://localhost:3000/user 
+content-type: application/json
 
+{
+    "newPassword": "marcep123",
+    "lastPassword": "marcep123"
+}
 

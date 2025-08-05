@@ -16,11 +16,20 @@ import { updateCategoryMock } from '../__mocks__/update-category.mock';
 describe('CategoryService', () => {
   let service: CategoryService;
   let categoryRepository: Repository<CategoryEntity>;
+  let productService: ProductService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         CategoryService,
+        {
+          provide: ProductService,
+          useValue: {
+            countProdutsByCategoryId: jest
+              .fn()
+              .mockResolvedValue([countProductMock]),
+          },
+        },
         {
           provide: getRepositoryToken(CategoryEntity),
           useValue: {
@@ -33,6 +42,7 @@ describe('CategoryService', () => {
     }).compile();
 
     service = module.get<CategoryService>(CategoryService);
+    productService = module.get<ProductService>(ProductService);
     categoryRepository = module.get<Repository<CategoryEntity>>(
       getRepositoryToken(CategoryEntity),
     );
@@ -40,7 +50,7 @@ describe('CategoryService', () => {
 
   it('should be defined', () => {
     expect(service).toBeDefined();
-    expect(productService).toBeDefined();
+    expect(ProductService).toBeDefined();
     expect(categoryRepository).toBeDefined();
   });
 

@@ -1,0 +1,20 @@
+
+GET http://localhost:3000/product
+content-type: application/json
+
+### CRIAR CATEGORIA
+POST http://localhost:3000/product
+content-type: application/json
+Authorization: 
+
+{
+    "categoryId": 2,
+    "name": "novo produto",
+    "price": 100.0, 
+    "image": "http://example.com/image.jpg",
+}
+
+### DELETAR CATEGORIA
+DELETE  http://localhost:3000/product/12
+content-type: application/json
+Authorization: 
