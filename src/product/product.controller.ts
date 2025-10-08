@@ -9,13 +9,15 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
-import { UserType } from 'src/user/enum/user-type-enum';
-import { ReturnProduct } from './dtos/return-product.dto';
-import { ProductService } from './product.service';
-import { Roles } from 'src/decorators/roles.decorator';
-import { CreateProductDTO } from './dtos/create-product.dto';
-import { ProductEntity } from './entities/product.entity';
 import { DeleteResult } from 'typeorm';
+import { Roles } from '../decorators/roles.decorator';
+import { UserType } from '../user/enum/user-type.enum';
+import { CreateProductDTO } from './dtos/create-product.dto';
+
+import { ReturnProduct } from './dtos/return-product.dto';
+
+import { ProductEntity } from './entities/product.entity';
+import { ProductService } from './product.service';
 import { UpdateProductDTO } from './dtos/update-product.dto';
 
 @Controller('product')
@@ -27,6 +29,15 @@ export class ProductController {
   async findAll(): Promise<ReturnProduct[]> {
     return (await this.productService.findAll([], true)).map(
       (product) => new ReturnProduct(product),
+    );
+  }
+
+
+  @Roles(UserType.Admin, UserType.Root, UserType.User)
+  @Get('/:productId')
+  async findProductById(@Param('productId') productId): Promise<ReturnProduct> {
+    return new ReturnProduct(
+      await this.productService.findProductById(productId, true),
     );
   }
 
@@ -56,4 +67,5 @@ export class ProductController {
   ): Promise<ProductEntity> {
     return this.productService.updateProduct(updateProduct, productId);
   }
+
 }

@@ -1,3 +1,9 @@
+### BUSCA CARRINHO
+
+GET http://localhost:3000/cart
+content-type: application/json
+
+
 #CREATE CART
 POST http://localhost:3000/cart 
 content-type: application/json
@@ -6,4 +12,20 @@ Authorization:
 {
     "productId": 2,
     "amount": 1
+}
+
+### DELETAR CARRINHO
+DELETE  http://localhost:3000/cart/12
+content-type: application/json
+Authorization: 
+
+
+### ATUALIZAR CARRINHOS
+PATCH http://localhost:3000/cart 
+content-type: application/json
+Authorization: 
+
+{
+    "newPassword": "marcep123",
+    "lastPassword": "marcep123"
 }

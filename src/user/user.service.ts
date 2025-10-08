@@ -9,7 +9,7 @@ import { UserEntity } from './entities/user.entity';
 import * as bcrypt from 'bcrypt';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { createPasswordHashed, validatePassword } from 'src/utils/password';
+import { createPasswordHashed, validatePassword } from '../utils/password';
 import { UpdatePasswordDTO } from './dto/update-password.dto';
 
 @Injectable()

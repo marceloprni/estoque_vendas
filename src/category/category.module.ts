@@ -10,6 +10,7 @@ import { ProductModule } from '../product/product.module';
     TypeOrmModule.forFeature([CategoryEntity]),
     forwardRef(() => ProductModule),
   ],
+  
   providers: [CategoryService],
   controllers: [CategoryController],
   exports: [CategoryService],

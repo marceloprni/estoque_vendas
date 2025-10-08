@@ -10,13 +10,13 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { DeleteResult } from 'typeorm';
-import { Roles } from '../decorators/roles.decorator';
-import { UserType } from '../user/enum/user-type.enum';
-import { CategoryService } from './category.service';
-import { CreateCategory } from './dtos/create-category.dto';
-import { ReturnCategory } from './dtos/return-category.dto';
-import { UpdateCategory } from './dtos/update-category.dto';
-import { CategoryEntity } from './entities/category.entity';
+import { Roles } from '../../decorators/roles.decorator';
+import { UserType } from '../../user/enum/user-type.enum';
+import { CategoryService } from '../category.service';
+import { CreateCategory } from '../dtos/create-category.dto';
+import { ReturnCategory } from '../dtos/return-category.dto';
+import { UpdateCategory } from '../dtos/update-category.dto';
+import { CategoryEntity } from '../entities/category.entity';
 
 @Roles(UserType.Admin, UserType.Root, UserType.User)
 @Controller('category')

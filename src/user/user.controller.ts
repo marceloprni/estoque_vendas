@@ -12,10 +12,10 @@ import { CreateUserDTO } from './dto/createUser.dto';
 import { UserService } from './user.service';
 import { UserEntity } from './entities/user.entity';
 import { ReturnUserDTO } from './dto/returnUser.dto';
-import { Roles } from 'src/decorators/roles.decorator';
-import { UserType } from './enum/user-type-enum';
+import { Roles } from '../decorators/roles.decorator';
+import { UserType } from './enum/user-type.enum';
 import { UpdatePasswordDTO } from './dto/update-password.dto';
-import { UserId } from 'src/decorators/user-id.decorator';
+import { UserId } from '../decorators/user-id.decorator';
 
 @Controller('user')
 export class UserController {
