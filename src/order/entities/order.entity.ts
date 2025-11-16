@@ -1,6 +1,7 @@
 import { AddressEntity } from '../../address/entities/address.entity';
+import { OrderProductEntity } from '../../order-product/entities/order-product.entity';
+import { PaymentEntity } from '../../payment/entities/payment.entity';
 import { UserEntity } from '../../user/entities/user.entity';
-
 import {
   Column,
   CreateDateColumn,
@@ -42,6 +43,13 @@ export class OrderEntity {
   @ManyToOne(() => AddressEntity, (address) => address.orders)
   @JoinColumn({ name: 'address_id', referencedColumnName: 'id' })
   address?: AddressEntity;
+
+  @ManyToOne(() => PaymentEntity, (payment) => payment.orders)
+  @JoinColumn({ name: 'payment_id', referencedColumnName: 'id' })
+  payment?: PaymentEntity;
+
+  @OneToMany(() => OrderProductEntity, (orderProduct) => orderProduct.order)
+  ordersProduct?: OrderProductEntity[];
 
   amountProducts?: number;
 }

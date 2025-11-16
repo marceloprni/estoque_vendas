@@ -1,0 +1,11 @@
+### CRIAR ORDER
+POST http://localhost:3000/order/cart/4
+content-type: application/json
+Authorization: 
+
+{
+    "amountPayments": 2,
+    "codePix": 2,
+    "dataPayment": 100.0, 
+
+}
