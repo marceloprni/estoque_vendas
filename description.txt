@@ -24,3 +24,5 @@ nest g controller user
 nest g service user
 
 npx typeorm migration:create ./src/migration/create_table_user
+
+alterado
