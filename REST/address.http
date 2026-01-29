@@ -11,6 +11,6 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidHlwZVVzZXIiOjEs
 }
 
 
-GET http://localhost:3000/addres
+GET http://localhost:3000/address
 content-type: application/json
 Authorization:
